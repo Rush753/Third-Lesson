@@ -1,0 +1,128 @@
+@import "variables2.less";
+@import "color.less";
+
+*{
+	margin: 0;
+	padding: 0;
+}
+
+body{
+	background-image: url('../image/backgrund3.jpg'); 
+	background-size: 100%;
+	background-repeat: no-repeat;
+}
+
+.first-part{
+	height:20vh;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: center;
+	padding: 1vh;
+}
+.first-part__div1{
+	background-color:spin(@color-red,30%) ;
+	height: 90%;
+	width: 300px;
+	margin-bottom: 10px;
+	border: 2px solid blue;
+	
+}
+
+.first-part__div2{
+	background-color: lighten(@color-blue,30%);
+		height: 90%;
+	width: 300px;
+	margin-bottom: 10px;
+	border: 2px solid blue;
+	
+}
+
+.first-part__div3{
+	background-color: mix(@color-green,@color-blue,80%);
+		height: 90%;
+	width: 300px;
+	margin-bottom: 10px;
+	border: 2px solid blue;
+}
+
+.second-part{
+	height:50vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	padding: 1vh;
+	border: 2px solid blue;
+}
+
+.row{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: center;
+	height:50%;
+	width: 100%;
+}
+
+.first-row__div1{
+	width: 30%;
+	height: 90%;
+	.text(red,left,overline,lowercase,2,"Georgia",10pt);
+	border: 1px solid blue;
+}
+
+.first-row__div2{
+	width: 30%;
+	height: 90%;
+	.text(blue,right,line-through,uppercase,1,"Times New Roman",18pt);
+	border: 1px solid blue;
+}
+.first-row__div3{
+	width: 30%;
+	height: 90%;
+	.text(green,center,underline,capitalize,2,"Arial",120%);
+	border: 1px solid blue;
+}
+.second-row__div4{
+	width: 30%;
+	height: 90%;
+	.text(darken(yellow,20%),right,line-through,uppercase,2,"Verdana",60%);
+	border: 1px solid blue;
+}
+.second-row__div5{
+	width: 30%;
+	height: 90%;
+	.text(black,center,overline,capitalize,2,"Courier New",80%);
+	border: 1px solid blue;
+}
+.second-row__div6{
+	width: 30%;
+	height: 90%;
+	.text(orange,left,underline,lowercase,1,"Lucida Console",50%);
+	border: 1px solid blue;
+}
+
+.tooltip {
+	border-bottom: 1px dotted #0077AA;
+	cursor: help;
+}
+
+.tooltip::after {
+	background: rgba(0, 0, 0, 0.8);
+	border-radius: 8px 8px 8px 0px;
+	box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
+	color: #FFF;
+	content: attr(data-tooltip); 
+	
+	opacity: 0; 
+	padding: 3px 7px;
+	position: absolute;
+	visibility: hidden; 
+			
+}
+		
+.tooltip:hover::after {
+	opacity: 1; 
+	visibility: visible;
+}
